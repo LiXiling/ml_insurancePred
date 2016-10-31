@@ -33351,9 +33351,19 @@ This is 82.46% compared with the Benchmark.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Improvement">Improvement<a class="anchor-link" href="#Improvement">&#182;</a></h3><p>There is one big issue with this implementation: The provided dataset holds aprox. 190k data points. This was a dataset to big to handle efficiently for this implementation. One would need to improve the preprocessing stage, as the encoding of the 116 categorical features took a long time.
-Using this complete dataset, a better solution might be found.</p>
+<h3 id="Improvement">Improvement<a class="anchor-link" href="#Improvement">&#182;</a></h3><p>There is one big issue with this implementation: The provided dataset holds aprox. 190k data points. This was a dataset to big to handle efficiently for this implementation. One would need to improve the preprocessing stage or utilize multithreading, learning the whole dataset with a model took a very long time (as a fact I was not able to finish the .fit() phase with the whole dataset). Using this complete dataset, a better solution might be found.</p>
 <p>The next possible improvement exists in the selection of the model: This project compared 4 models against a benchmark model. With a different selection a better model might be found.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Also a thing I would have liked to try out:
+With v0.18 of scikit-learn, Decision Trees (and the Random Forest Model) are now able to split using the MAE as a metric. Until now only MSE (Mean Squared Error) was available. I would have liked to see, if the models would have improved, as we also use the MAE to rate the overall performance of the models.</p>
 
 </div>
 </div>
